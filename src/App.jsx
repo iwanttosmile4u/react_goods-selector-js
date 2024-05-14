@@ -43,6 +43,8 @@ export const App = () => {
         <tbody>
           {goods.map((good, index) => {
             const isSelected = selectedGood === good;
+            const selectValidation = isSelected ? '' : good;
+            const signChangeValidation = isSelected ? '-' : '+';
 
             return (
               // eslint-disable-next-line react/no-array-index-key
@@ -58,10 +60,10 @@ export const App = () => {
                     type="button"
                     className="button"
                     onClick={() => {
-                      setSelectedGood(isSelected ? '' : good);
+                      setSelectedGood(selectValidation);
                     }}
                   >
-                    {isSelected ? '-' : '+'}
+                    {signChangeValidation}
                   </button>
                 </td>
 
